@@ -8,6 +8,13 @@ public static class ManagerPreference
 {
     public const string PreferMo2FileName = "prefer-mo2";
 
+    // Set only by SetPreferMo2 (the GUI "switch manager" action). A stale FFORGE_MO2_INSTANCE
+    // or FFORGE_PREFER_MO2 env var would otherwise permanently outrank the marker file below,
+    // making the in-app switch button a no-op for the rest of the run. Explicit, in-the-moment
+    // user action must win; the env var still governs the *next* launch, since this is not
+    // persisted anywhere.
+    private static bool? _sessionOverride;
+
     public static string SettingsDirectory =>
         Path.Combine(
             Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData),
@@ -21,6 +28,8 @@ public static class ManagerPreference
     {
         get
         {
+            if (_sessionOverride is { } sessionOverride)
+                return sessionOverride;
             if (IsTruthy(Environment.GetEnvironmentVariable("FFORGE_PREFER_MO2")))
                 return true;
             if (!string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("FFORGE_MO2_INSTANCE")))
@@ -42,6 +51,7 @@ public static class ManagerPreference
         {
             File.Delete(path);
         }
+        _sessionOverride = preferMo2;
     }
 
     public static void TogglePreferMo2() => SetPreferMo2(!PreferMo2);

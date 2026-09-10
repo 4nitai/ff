@@ -23,7 +23,15 @@ public sealed class EnvironmentDiscovery(ILogger log)
         string? mo2ProfileOverride = null,
         bool strictMo2Override = false)
     {
-        var environmentInstance = Environment.GetEnvironmentVariable("FFORGE_MO2_INSTANCE");
+        // preferMo2 == false is an explicit "use Vortex" request — the GUI switch button, or a
+        // caller that has already decided. It must be able to override a stale FFORGE_MO2_INSTANCE
+        // / FFORGE_PREFER_MO2 env var, otherwise the switch could never leave MO2 once either is
+        // set (it would force strict MO2 discovery below regardless of the caller's choice).
+        var explicitlyWantsVortex = preferMo2 == false;
+
+        var environmentInstance = explicitlyWantsVortex
+            ? null
+            : Environment.GetEnvironmentVariable("FFORGE_MO2_INSTANCE");
         var exactInstance = !string.IsNullOrWhiteSpace(mo2InstanceOverride)
             ? mo2InstanceOverride
             : environmentInstance;
@@ -50,8 +58,8 @@ public sealed class EnvironmentDiscovery(ILogger log)
             ?? ManagerPreference.PreferMo2;
         var explicitMo2 = wantMo2
             || !string.IsNullOrWhiteSpace(mo2InstanceOverride)
-            || IsTruthy(Environment.GetEnvironmentVariable("FFORGE_PREFER_MO2"))
-            || !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("FFORGE_MO2_INSTANCE"));
+            || (!explicitlyWantsVortex && IsTruthy(Environment.GetEnvironmentVariable("FFORGE_PREFER_MO2")))
+            || (!explicitlyWantsVortex && !string.IsNullOrWhiteSpace(Environment.GetEnvironmentVariable("FFORGE_MO2_INSTANCE")));
 
         if (explicitMo2)
         {

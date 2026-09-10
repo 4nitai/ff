@@ -155,6 +155,34 @@ public sealed class Mo2DiscoveryOverrideTests : IDisposable
     }
 
     [Fact]
+    public void EnvironmentDiscovery_ExplicitPreferVortexIgnoresMo2InstanceEnvVar()
+    {
+        // Regression test for the GUI "Switch to Vortex" button doing nothing when
+        // FFORGE_MO2_INSTANCE is set: an explicit preferMo2:false must not be forced into the
+        // strict single-instance MO2 path just because that env var happens to be set.
+        var invalid = Path.Combine(_root, "env-instance-without-ini");
+        Directory.CreateDirectory(invalid);
+        var old = Environment.GetEnvironmentVariable("FFORGE_MO2_INSTANCE");
+        try
+        {
+            Environment.SetEnvironmentVariable("FFORGE_MO2_INSTANCE", invalid);
+
+            var error = Assert.Throws<DirectoryNotFoundException>(() =>
+                new EnvironmentDiscovery(_log).Discover(preferMo2: false));
+
+            // Strict-MO2 discovery (the old, buggy behaviour) fails with a different message —
+            // it never even attempts Vortex. Falling through to the generic "not found" message
+            // proves Vortex discovery was actually attempted first, as the explicit switch asked.
+            Assert.DoesNotContain("selected MO2 instance/profile", error.Message, StringComparison.OrdinalIgnoreCase);
+            Assert.Contains("Could not find a Vortex", error.Message, StringComparison.Ordinal);
+        }
+        finally
+        {
+            Environment.SetEnvironmentVariable("FFORGE_MO2_INSTANCE", old);
+        }
+    }
+
+    [Fact]
     public void Cli_ExposesAndPassesMo2ProfileOverride()
     {
         var program = ReadSource("Cli", "Program.cs");
