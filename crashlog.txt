@@ -1,0 +1,963 @@
+CRASH TIME: 2026-09-10 21:37:58
+Skyrim SSE v1.7.104
+CrashLoggerSSE v1-25-0-0 Aug 21 2026 09:19:20
+
+Unhandled exception "EXCEPTION_ACCESS_VIOLATION" at 0x7FF71B6BA87C SkyrimSE.exe+0CEA87C	mov rax, [r9]
+Exception Flags: 0x00000000 (Continuable)
+Number of Parameters: 2
+Exception Thread ID: 4020
+Access Violation: Tried to read memory at 0xFFFFFFFFFFFFFFFF
+ACCESS VIOLATION ANALYSIS:
+	Instruction: mov rax, [r9]
+	Memory Operand: [base=r9, index=none, scale=0, disp=+0x0]
+	Base Register: r9 = 0xE8000001A65C5016
+	Computed Address: 0xE8000001A65C5016
+	Fault Address:   0xFFFFFFFFFFFFFFFF (mismatch)
+
+POSSIBLE RELEVANT OBJECTS:
+	R12: (MemoryHeap*)
+	RCX: (BSSmallBlockAllocator*)
+	RSP+A8: (`anonymous namespace'::DeepCopyStream*)
+	RSP+170: (NiTLargePrimitiveArray<unsigned int>*)
+	RSP+1B8: (BSLightingShaderProperty*)
+	RSP+280: (NiMemStream*)
+	RSP+288: (NiTLargeObjectArray<NiPointer<NiObject> >*)
+	RSP+2E0: (NiNode*) "BSFaceGenNiNodeSkinned"
+	RSP+2F0: (NiAlphaProperty*)
+	RSP+950: (BSDynamicTriShape*) "0_HAIRLINE_Female_Human_Straight"
+	RSP+960: (BSLightingShaderMaterialHairTint*)
+	RSP+970: (BSDynamicTriShape*) "0Tsugumi"
+	RSP+990: (BSLightingShaderMaterialHairTint*)
+	RSP+9A0: (SKSETaskExportHead*)
+	RSP+9A8: (BSDynamicTriShape*) "0Tsugumi"
+	RSP+A10: (BSFadeNode*)
+	RSP+A38: (TESNPC*) "Haruka" [0x00000007] ("Skyrim.esm") "Haruka"
+	RSP+A40: (BSFaceGenNiNode*) "BSFaceGenNiNodeSkinned"
+	RSP+A50: (BSFaceGenAnimationData*)
+	RSP+E38: (CursorMenu*)
+	RSP+F60: (LocaleManager*)
+	RSP+F90: (FxDelegate*)
+	RSP+FA0: (SkyrimVM*)
+	RSP+FB8: (SKSEDelayFunctorManager*)
+
+PROCESS INFO:
+	Process ID: 32944
+	Crash Thread ID: 4020
+	Process Uptime: 00:01:40 (100741ms)
+	Working Directory: C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition
+	Command Line: "C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition\SkyrimSE.exe"
+	Executable MD5: 113faeb71fd8f62b26d0c8627299ab40
+	Executable Size: 37910440 bytes
+	Executable Modified: 2026-09-01 09:16:34
+	Elevated: No
+
+THREAD CONTEXT (HEURISTIC):
+	Thread Priority: 0
+	Likely Role: Job/Task
+
+SYSTEM SPECS:
+	OS: Microsoft Windows 11 Home v10.0.26200
+	CPU: AuthenticAMD AMD Ryzen AI 7 350 w/ Radeon 860M              
+	CPU Cores: 16 logical, 8 physical, 1 packages
+	GPU #1: Nvidia NVIDIA GeForce RTX 5060 Laptop GPU
+	GPU #2: AMD AMD Radeon(TM) 860M Graphics
+	GPU #3: Microsoft Basic Render Driver
+	PHYSICAL MEMORY: 14.69 GB/15.02 GB
+	VIRTUAL MEMORY: 17.50 GB/131072.00 GB
+	PROCESS MEMORY: Working Set: 2740.05 MB, Private: 4210.95 MB, Peak: 2931.11 MB
+	PAGE FAULTS: 1289176 (Peak: 3073495040)
+	GPU MEMORY: 1.54/6.96 GB
+	Detected Virtual Machine: Microsoft Hyper-V (100%)
+
+CALL STACK ([P]robable / [S]tack scan):
+	[ 0][P] 0x7FF71B6BA87C       SkyrimSE.exe+0CEA87C -> 68433+0x9C	mov rax, [r9]
+	[ 1][P] 0x7FF71B6BA7A2       SkyrimSE.exe+0CEA7A2 -> 68432+0x72	mov rdi, rax
+	[ 2][P] 0x7FF71B6AE342       SkyrimSE.exe+0CDE342 -> 68115+0xF2	test rax, rax
+	[ 3][P] 0x7FF71B87E63B       SkyrimSE.exe+0EAE63B -> 69045+0x6B	mov r8, [rdi]
+	[ 4][P] 0x7FF71B87C7E4       SkyrimSE.exe+0EAC7E4 -> 68994+0x54	add rsp, 0x48
+	[ 5][P] 0x7FF71B8B7739       SkyrimSE.exe+0EE7739 -> 70396+0x1D9	mov r15, rax
+	[ 6][P] 0x7FF71B8B66AF       SkyrimSE.exe+0EE66AF -> 70382+0x3F	mov rax, [rbx]
+	[ 7][P] 0x7FF71B8B4369       SkyrimSE.exe+0EE4369 -> 70334+0x19	
+	[ 8][P] 0x7FF71B8B42BB       SkyrimSE.exe+0EE42BB -> 70332+0x3B	movzx ebx, al
+	[ 9][P] 0x7FF71B8ACAA8       SkyrimSE.exe+0EDCAA8 -> 70191+0x68	mov r8d, [rsp+0x678]
+	[10][P] 0x7FFD2F41A947         skee64.dll+015A947	nop |  virtual void SKSETaskExportHead::Run(void) [?Run@SKSETaskExportHead@@UEAAXXZ]
+	[11][P] 0x7FFD2F495F22         skee64.dll+01D5F22	mov rcx, [rbx+0x08] |  virtual void std::_Func_impl_no_alloc<`void SKEE_AddTask<SKSETaskExportHead>(SKSE::TaskInterface const *,SKSETaskExportHead *)'::`2'::<lambda_1>,void>::_Do_call(void) [?_Do_call@?$_Func_impl_no_alloc@V<lambda_1>@?1???$SKEE_AddTask@VSKSETaskExportHead@@@@YAXPEBVTaskInterface@SKSE@@PEAVSKSETaskExportHead@@@Z@X$$V@std@@EEAAXXZ]
+	[12][P] 0x7FFDCA7A99AF skse64_1_7_104.dll+00199AF
+	[13][P] 0x7FF71B029423       SkyrimSE.exe+0659423 -> 36564+0xBB3	mov rcx, [0x00007FF71DC12650]
+	[14][P] 0x7FFD3066274E       hdtsmp64.dll+004274E	mov edx, 0x10 |  D:\a\hdtSMP64\hdtSMP64\src\Hooks.cpp:213 static void Hooks::MainHooks::Update(RE::Main * const) [?Update@MainHooks@Hooks@@SAXQEAVMain@RE@@@Z] | params: a_this: const RE::Main*
+	[15][P] 0x7FF71B021465       SkyrimSE.exe+0651465 -> 36544+0x165	test bl, bl
+	[16][P] 0x7FF71BF7843E       SkyrimSE.exe+15A843E -> 109636+0x106	mov ebx, eax
+	[17][P] 0x7FFE54DACCB7       KERNEL32.DLL+002CCB7
+	[18][P] 0x7FFE5596AD6C          ntdll.dll+00AAD6C
+	[19][S] 0x7FF71B6AE391       SkyrimSE.exe+0CDE391 -> 68115+0x141	mov rbx, rax
+	[20][S] 0x7FF71B881112       SkyrimSE.exe+0EB1112 -> 69164+0x12	nop
+	[21][S] 0x7FF71BF3ABE2       SkyrimSE.exe+156ABE2 -> 107822+0xA2	add [rdi+0x28], esi
+	[22][S] 0x7FF71B8AD600       SkyrimSE.exe+0EDD600 -> 76582+0x260	or eax, 0x27BD20B
+	[23][S] 0x7FF71AB6AEF0       SkyrimSE.exe+019AEF0 -> 13158+0x30	sub rsp, 0x38
+	[24][S] 0x7FF71BF3A770       SkyrimSE.exe+156A770 -> 107808+0x30	mov [rsp+0x08], rbx
+	[25][S] 0x7FF71BF3A7C0       SkyrimSE.exe+156A7C0 -> 107809+0x50	jmp 0x00007FF71BF3AB40
+	[26][S] 0x7FFE558CB254          ntdll.dll+000B254
+	[27][S] 0x7FF71B6AE75E       SkyrimSE.exe+0CDE75E -> 68117+0xBE	mov rbx, [rsp+0x30]
+	[28][S] 0x7FF71B6BA6A0       SkyrimSE.exe+0CEA6A0 -> 68430+0xF0	test dil, dil
+	[29][S] 0x7FF71AB22030       SkyrimSE.exe+0152030 -> 11347+0x70	sub rsp, 0x38
+	[30][S] 0x7FF71B6AE732       SkyrimSE.exe+0CDE732 -> 68117+0x92	mov rbx, [rsp+0x30]
+	[31][S] 0x7FF71BF78009       SkyrimSE.exe+15A8009 -> 109627+0x45	add rdi, rsi
+	[32][S] 0x7FF71B70571D       SkyrimSE.exe+0D3571D -> 83513+0xD	mov rcx, rax
+	[33][S] 0x7FF71B6F3BF0       SkyrimSE.exe+0D23BF0 -> 83250+0x4790	add rsp, 0x310
+	[34][S] 0x7FF71B6DBF30       SkyrimSE.exe+0D0BF30 -> 82874+0xB0	cmp eax, 0x17
+	[35][S] 0x7FF71B73292E       SkyrimSE.exe+0D6292E -> 84227+0x4BE	add rsp, 0xD0
+	[36][S] 0x7FF71B71D8DA       SkyrimSE.exe+0D4D8DA -> 83912+0xDFA	add rsp, 0x1D8
+	[37][S] 0x7FF71B6E2A8B       SkyrimSE.exe+0D12A8B -> 83007+0xFB	mov al, 0x01
+	[38][S] 0x7FF71B6DCE7A       SkyrimSE.exe+0D0CE7A -> 82888+0x10A	xor edi, edi
+	[39][S] 0x7FF71B7892A9       SkyrimSE.exe+0DB92A9 -> 86277+0x319	mov rbx, [rsp+0xC0]
+	[40][S] 0x7FF71B733990       SkyrimSE.exe+0D63990 -> 84256+0x250	mov rcx, [rsp+0x80]
+	[41][S] 0x7FF71B6E29FF       SkyrimSE.exe+0D129FF -> 83007+0x6F	test rax, rax
+	[42][S] 0x7FF71B6F78A5       SkyrimSE.exe+0D278A5 -> 83290+0x15	movsxd rcx, eax
+	[43][S] 0x7FF71B788F83       SkyrimSE.exe+0DB8F83 -> 86276+0x33	mov al, 0x01
+	[44][S] 0x7FF71B78F4F8       SkyrimSE.exe+0DBF4F8 -> 86406+0x118	test edi, edi
+	[45][S] 0x7FF71B733EA3       SkyrimSE.exe+0D63EA3 -> 84265+0xA3	test al, al
+	[46][S] 0x7FF71B78F576       SkyrimSE.exe+0DBF576 -> 86407+0x26	add rsp, 0x48
+	[47][S] 0x7FF71B71DDCE       SkyrimSE.exe+0D4DDCE -> 83914+0x14E	mov r12, [rsp+0x80]
+	[48][S] 0x7FF71B71DC39       SkyrimSE.exe+0D4DC39 -> 83913+0x349	mov rcx, [rsp+0x38]
+	[49][S] 0x7FF71B716B89       SkyrimSE.exe+0D46B89 -> 83793+0x29	mov rdx, rax
+	[50][S] 0x7FF71B7C0EE1       SkyrimSE.exe+0DF0EE1 -> 87276+0x11	mov rcx, [0x00007FF71DC466D8]
+	[51][S] 0x7FF71B71487C       SkyrimSE.exe+0D4487C -> 83766+0xB1C	add rsp, 0x108
+	[52][S] 0x7FF71B0342DB       SkyrimSE.exe+06642DB -> 36799+0x2B	movzx ecx, al
+	[53][S] 0x7FF71B037523       SkyrimSE.exe+0667523 -> 36891+0x2B3	lea r11, [rsp+0x130]
+	[54][S] 0x7FFDCA7C6B39 skse64_1_7_104.dll+0036B39
+	[55][S] 0x7FFDCA79F335 skse64_1_7_104.dll+000F335
+	[56][S] 0x7FF71B3C769B       SkyrimSE.exe+09F769B -> 54520+0x2B	movzx ecx, al
+	[57][S] 0x7FF71B3B800B       SkyrimSE.exe+09E800B -> 54069+0x21B	nop
+	[58][S] 0x7FFE52DEC11F     KERNELBASE.dll+001C11F
+	[59][S] 0x7FFE4E7BE490  CoreMessaging.dll+002E490
+	[60][S] 0x7FFE55A20200          ntdll.dll+0160200
+	[61][S] 0x7FFE5351432B       ucrtbase.dll+008432B
+	[62][S] 0x7FFE52EDF420     KERNELBASE.dll+010F420
+
+REGISTERS:
+	RAX 0x0                (size_t) [0]
+	RCX 0x7FF71DC43BC0     (BSSmallBlockAllocator*)
+	RDX 0x7FF71DC43BC8     (void* -> SkyrimSE.exe+3273BC8	)
+	RBX 0x7FF71DC43BE8     (void* -> SkyrimSE.exe+3273BE8	)
+	RSP 0x9FB3DAE970       (void*)
+	RBP 0x0                (size_t) [0]
+	RSI 0x7FF71DC43BC8     (void* -> SkyrimSE.exe+3273BC8	)
+	RDI 0x1A65C62ED00      (void*)
+	R8  0x0                (size_t) [0]
+	R9  0xE8000001A65C5016 (size_t) [uint: 16717361823885316118 int: -1729382249824235498]
+	R10 0x0                (size_t) [0]
+	R11 0x7FFE3C22E29F     (void* -> VCRUNTIME140.dll+001E29F	)
+	R12 0x1A5AFFD8F90      (MemoryHeap*)
+	R13 0x0                (size_t) [0]
+	R14 0x0                (size_t) [0]
+	R15 0x0                (size_t) [0]
+
+STACK:
+	[RSP+0   ] 0x1A5AFFD8F98      (void*)
+	[RSP+8   ] 0x0                (size_t) [0]
+	[RSP+10  ] 0x0                (size_t) [0]
+	[RSP+18  ] 0x1A5AFFD8F90      (MemoryHeap*) See R12
+	[RSP+20  ] 0x1A5AFFD8F90      (MemoryHeap*) See R12
+	[RSP+28  ] 0x7FF71DC43C08     (void* -> SkyrimSE.exe+3273C08	rol byte ptr [rdi], 0x01)
+	[RSP+30  ] 0x7FF71DC43BC0     (BSSmallBlockAllocator*) See RCX
+	[RSP+38  ] 0x7FF71B6BA7A2     (void* -> SkyrimSE.exe+0CEA7A2	mov rdi, rax)
+	[RSP+40  ] 0x7FF71DC43BE8     (void* -> SkyrimSE.exe+3273BE8	)
+	[RSP+48  ] 0x7FF71B6AE391     (void* -> SkyrimSE.exe+0CDE391	mov rbx, rax)
+	[RSP+50  ] 0x0                (size_t) [0]
+	[RSP+58  ] 0x7FF71DC44608     (void* -> SkyrimSE.exe+3274608	)
+	[RSP+60  ] 0x7FF71DC43BC0     (BSSmallBlockAllocator*) See RCX
+	[RSP+68  ] 0x7FF71B6AE342     (void* -> SkyrimSE.exe+0CDE342	test rax, rax)
+	[RSP+70  ] 0x0                (size_t) [0]
+	[RSP+78  ] 0x8                (size_t) [8]
+	[RSP+80  ] 0x7FF71E06A810     (void* -> SkyrimSE.exe+369A810	add [rax], eax)
+	[RSP+88  ] 0x1A5AFFD8F90      (MemoryHeap*) See R12
+	[RSP+90  ] 0x200000000        (size_t) [8589934592]
+	[RSP+98  ] 0x1A5AFFD8F90      (MemoryHeap*) See R12
+	[RSP+A0  ] 0xD0               (size_t) [208]
+	[RSP+A8  ] 0x9FB3DAEC90       (`anonymous namespace'::DeepCopyStream*)
+		Header: author:  version: 100 processScript:  exportScript: 
+	[RSP+B0  ] 0x0                (size_t) [0]
+	[RSP+B8  ] 0x9FB3DAEAC8       (void*)
+	[RSP+C0  ] 0x9FB3DAEB20       (char*) "8"
+	[RSP+C8  ] 0x7FF71B87E63B     (void* -> SkyrimSE.exe+0EAE63B	mov r8, [rdi])
+	[RSP+D0  ] 0x0                (size_t) [0]
+	[RSP+D8  ] 0x0                (size_t) [0]
+	[RSP+E0  ] 0x1                (size_t) [1]
+	[RSP+E8  ] 0x9FB3DAEAC0       (void*)
+	[RSP+F0  ] 0x7FF71C418C28     (char*) "NiAlphaProperty"
+	[RSP+F8  ] 0x7FF71B87C7E4     (void* -> SkyrimSE.exe+0EAC7E4	add rsp, 0x48)
+	[RSP+100 ] 0x1A65B1623F0      (void*)
+	[RSP+108 ] 0x7FF71B881112     (void* -> SkyrimSE.exe+0EB1112	nop)
+	[RSP+110 ] 0x200000000        (size_t) [8589934592]
+	[RSP+118 ] 0x0                (size_t) [0]
+	[RSP+120 ] 0x0                (size_t) [0]
+	[RSP+128 ] 0x0                (size_t) [0]
+	[RSP+130 ] 0xFFFFFFFF         (size_t) [4294967295]
+	[RSP+138 ] 0x0                (size_t) [0]
+	[RSP+140 ] 0x7FF71C418C28     (char*) "NiAlphaProperty"
+	[RSP+148 ] 0x7FF71B8B7739     (void* -> SkyrimSE.exe+0EE7739	mov r15, rax)
+	[RSP+150 ] 0x4                (size_t) [4]
+	[RSP+158 ] 0x8                (size_t) [8]
+	[RSP+160 ] 0x0                (size_t) [0]
+	[RSP+168 ] 0x0                (size_t) [0]
+	[RSP+170 ] 0x9FB3DAEEC8       (NiTLargePrimitiveArray<unsigned int>*)
+	[RSP+178 ] 0x7FF71BF3ABE2     (void* -> SkyrimSE.exe+156ABE2	add [rdi+0x28], esi)
+	[RSP+180 ] 0xFFFFFFFFFFFFFFFE (size_t) [uint: 18446744073709551614 int: -2]
+	[RSP+188 ] 0x7FF71C4175D8     (void* -> SkyrimSE.exe+1A475D8	adc [rbx+rcx*4+0x7FF71B], dl)
+	[RSP+190 ] 0x25               (size_t) [37]
+	[RSP+198 ] 0x1A65C8F3BC0      (void*)
+	[RSP+1A0 ] 0x1A600000001      (size_t) [1812476198913]
+	[RSP+1A8 ] 0x7FF71B8AD600     (void* -> SkyrimSE.exe+0EDD600	or eax, 0x27BD20B)
+	[RSP+1B0 ] 0x38               (size_t) [56]
+	[RSP+1B8 ] 0x1A65C208DC0      (BSLightingShaderProperty*)
+		Flags: 0x81818E440303
+		RTTIName: "BSLightingShaderProperty"
+		NiPropertyType: kShade (01)
+	[RSP+1C0 ] 0x0                (size_t) [0]
+	[RSP+1C8 ] 0x0                (size_t) [0]
+	[RSP+1D0 ] 0x9FB3DAF2D8       (void*)
+	[RSP+1D8 ] 0x9FB3DAF2E8       (void*)
+	[RSP+1E0 ] 0x9FB3DAF3D0       (void*)
+	[RSP+1E8 ] 0x7FF71B8B66AF     (void* -> SkyrimSE.exe+0EE66AF	mov rax, [rbx])
+	[RSP+1F0 ] 0x9F00000001       (size_t) [682899800065]
+	[RSP+1F8 ] 0x9F00000001       (size_t) [682899800065]
+	[RSP+200 ] 0xFFFFFFFFFFFFFF01 (size_t) [uint: 18446744073709551361 int: -255]
+	[RSP+208 ] 0x9FB3DAEC90       (`anonymous namespace'::DeepCopyStream*) See RSP+A8
+	[RSP+210 ] 0xFFFFFFFFFFFFFF00 (size_t) [uint: 18446744073709551360 int: -256]
+	[RSP+218 ] 0x0                (size_t) [0]
+	[RSP+220 ] 0x38               (size_t) [56]
+	[RSP+228 ] 0x1A65C208DC0      (BSLightingShaderProperty*) See RSP+1B8
+	[RSP+230 ] 0x9FB3DAF2D8       (void*)
+	[RSP+238 ] 0x9FB3DAF2E8       (void*)
+	[RSP+240 ] 0x9FB3DAF3D0       (void*)
+	[RSP+248 ] 0x7FF71B8B4369     (void* -> SkyrimSE.exe+0EE4369	)
+	[RSP+250 ] 0x7FF71AB6AEF0     (void* -> SkyrimSE.exe+019AEF0	sub rsp, 0x38)
+	[RSP+258 ] 0x0                (size_t) [0]
+	[RSP+260 ] 0xFFFFFFFFFFFFFFFE (size_t) [uint: 18446744073709551614 int: -2]
+	[RSP+268 ] 0x9FB3DAEC90       (`anonymous namespace'::DeepCopyStream*) See RSP+A8
+	[RSP+270 ] 0x9FB3DAEC90       (`anonymous namespace'::DeepCopyStream*) See RSP+A8
+	[RSP+278 ] 0x7FF71B8B42BB     (void* -> SkyrimSE.exe+0EE42BB	movzx ebx, al)
+	[RSP+280 ] 0x9FB3DAEC18       (NiMemStream*)
+	[RSP+288 ] 0x9FB3DAEEE8       (NiTLargeObjectArray<NiPointer<NiObject> >*)
+	[RSP+290 ] 0x0                (size_t) [0]
+	[RSP+298 ] 0x9FB3DAF3D0       (void*)
+	[RSP+2A0 ] 0xFFFFFFFFFFFFFFFE (size_t) [uint: 18446744073709551614 int: -2]
+	[RSP+2A8 ] 0x7FF71C51AF08     (void* -> SkyrimSE.exe+1B4AF08	adc [rbx+rsi*8+0x7FF71B], ch)
+	[RSP+2B0 ] 0x1A600000004      (size_t) [1812476198916]
+	[RSP+2B8 ] 0x7FF71BF3A770     (void* -> SkyrimSE.exe+156A770	mov [rsp+0x08], rbx)
+	[RSP+2C0 ] 0x7FF71BF3A7C0     (void* -> SkyrimSE.exe+156A7C0	jmp 0x00007FF71BF3AB40)
+	[RSP+2C8 ] 0x1A5C1986D20      (void*)
+	[RSP+2D0 ] 0x400000004        (size_t) [17179869188]
+	[RSP+2D8 ] 0x400              (size_t) [1024]
+	[RSP+2E0 ] 0x1A65C8F24A0      (NiNode*) "BSFaceGenNiNodeSkinned"
+		RTTIName: "NiNode"
+		Flags: kSelectiveUpdate | kSelectiveUpdateTransforms | kSelectiveUpdateController
+	[RSP+2E8 ] 0x7FF71B8ACAA8     (void* -> SkyrimSE.exe+0EDCAA8	mov r8d, [rsp+0x678])
+	[RSP+2F0 ] 0x1A65BFF93E8      (NiAlphaProperty*)
+	[RSP+2F8 ] 0x9FB3DAF378       (void*)
+	[RSP+300 ] 0x1A65BFF93E8      (NiAlphaProperty*) See RSP+2F0
+	[RSP+308 ] 0x9FB3DAF378       (void*)
+	[RSP+310 ] 0xFFFFFFFFFFFFFFFE (size_t) [uint: 18446744073709551614 int: -2]
+	[RSP+318 ] 0x1A65C208DC0      (BSLightingShaderProperty*) See RSP+1B8
+	[RSP+320 ] 0x7FF71C415E78     (void* -> SkyrimSE.exe+1A45E78	ror byte ptr [rdx+0x7FF71B], 0x01)
+	[RSP+328 ] 0x64               (size_t) [100]
+	[RSP+330 ] 0x0                (size_t) [0]
+	[RSP+338 ] 0x0                (size_t) [0]
+	[RSP+340 ] 0x0                (size_t) [0]
+	[RSP+348 ] 0x0                (size_t) [0]
+	[RSP+350 ] 0xC14020007        (size_t) [51875282951]
+	[RSP+358 ] 0x0                (size_t) [0]
+	[RSP+360 ] 0x0                (size_t) [0]
+	[RSP+368 ] 0x0                (size_t) [0]
+	[RSP+370 ] 0x0                (size_t) [0]
+	[RSP+378 ] 0x0                (size_t) [0]
+	[RSP+380 ] 0x0                (size_t) [0]
+	[RSP+388 ] 0x0                (size_t) [0]
+	[RSP+390 ] 0x0                (size_t) [0]
+	[RSP+398 ] 0x7FFE558CB254     (void* -> ntdll.dll+000B254	lea r11, [rsp+0x2B0])
+	[RSP+3A0 ] 0x0                (size_t) [0]
+	[RSP+3A8 ] 0x0                (size_t) [0]
+	[RSP+3B0 ] 0x0                (size_t) [0]
+	[RSP+3B8 ] 0x0                (size_t) [0]
+	[RSP+3C0 ] 0x0                (size_t) [0]
+	[RSP+3C8 ] 0x0                (size_t) [0]
+	[RSP+3D0 ] 0x0                (size_t) [0]
+	[RSP+3D8 ] 0x0                (size_t) [0]
+	[RSP+3E0 ] 0x0                (size_t) [0]
+	[RSP+3E8 ] 0x0                (size_t) [0]
+	[RSP+3F0 ] 0x80000000         (size_t) [2147483648]
+	[RSP+3F8 ] 0x0                (size_t) [0]
+	[RSP+400 ] 0x0                (size_t) [0]
+	[RSP+408 ] 0x0                (size_t) [0]
+	[RSP+410 ] 0x0                (size_t) [0]
+	[RSP+418 ] 0x0                (size_t) [0]
+	[RSP+420 ] 0xC14020007        (size_t) [51875282951]
+	[RSP+428 ] 0x0                (size_t) [0]
+	[RSP+430 ] 0x0                (size_t) [0]
+	[RSP+438 ] 0x9FB3DAEE10       (void*)
+	[RSP+440 ] 0xADC90351FEC5     (size_t) [191078855737029]
+	[RSP+448 ] 0x1                (size_t) [1]
+	[RSP+450 ] 0x2                (size_t) [2]
+	[RSP+458 ] 0x10100000000      (size_t) [1103806595072]
+	[RSP+460 ] 0x0                (size_t) [0]
+	[RSP+468 ] 0x7FF71C4170A8     (void* -> SkyrimSE.exe+1A470A8	ror byte ptr [rsi+0x7FF71B8B], 0x00)
+	[RSP+470 ] 0x1A654AADD68      (void*)
+	[RSP+478 ] 0x1                (size_t) [1]
+	[RSP+480 ] 0x40000000000      (size_t) [4398046511104]
+	[RSP+488 ] 0x7FF71C4170C8     (void* -> SkyrimSE.exe+1A470C8	jo 0x00007FF71C417058)
+	[RSP+490 ] 0x1A65C5016D0      (void*)
+	[RSP+498 ] 0x1                (size_t) [1]
+	[RSP+4A0 ] 0x100000000        (size_t) [4294967296]
+	[RSP+4A8 ] 0x7FF71C4170A8     (void* -> SkyrimSE.exe+1A470A8	ror byte ptr [rsi+0x7FF71B8B], 0x00)
+	[RSP+4B0 ] 0x1A654AADD78      (void*)
+	[RSP+4B8 ] 0x1                (size_t) [1]
+	[RSP+4C0 ] 0x100000000        (size_t) [4294967296]
+	[RSP+4C8 ] 0x7FF71C4170E8     (void* -> SkyrimSE.exe+1A470E8	push rax)
+	[RSP+4D0 ] 0x0                (size_t) [0]
+	[RSP+4D8 ] 0x0                (size_t) [0]
+	[RSP+4E0 ] 0x8000000000       (size_t) [549755813888]
+	[RSP+4E8 ] 0x0                (size_t) [0]
+	[RSP+4F0 ] 0x0                (size_t) [0]
+	[RSP+4F8 ] 0x0                (size_t) [0]
+	[RSP+500 ] 0x7FF71C417108     (void* -> SkyrimSE.exe+1A47108	adc [rdx+0x7FF71B8B], dl)
+	[RSP+508 ] 0x1A500000025      (size_t) [1808181231653]
+	[RSP+510 ] 0x1A65C8F3CE8      (void*)
+	[RSP+518 ] 0x7FF700000000     (size_t) [140698833649664]
+	[RSP+520 ] 0x0                (size_t) [0]
+	[RSP+528 ] 0x10100000000      (size_t) [1103806595072]
+	[RSP+530 ] 0x0                (size_t) [0]
+	[RSP+538 ] 0x7FF71C4170B8     (void* -> SkyrimSE.exe+1A470B8	loopne 0x00007FF71C417049)
+	[RSP+540 ] 0x1A5B8C13C18      (void*)
+	[RSP+548 ] 0x100000400        (size_t) [4294968320]
+	[RSP+550 ] 0x40000000001      (size_t) [4398046511105]
+	[RSP+558 ] 0x7FF71C4170D8     (void* -> SkyrimSE.exe+1A470D8	add [rcx+0x7FF71B8B], dl)
+	[RSP+560 ] 0x1A65C5016D0      (void*)
+	[RSP+568 ] 0x1                (size_t) [1]
+	[RSP+570 ] 0x100000000        (size_t) [4294967296]
+	[RSP+578 ] 0x7FF71C4170B8     (void* -> SkyrimSE.exe+1A470B8	loopne 0x00007FF71C417049)
+	[RSP+580 ] 0x1A654AADD78      (void*)
+	[RSP+588 ] 0x100000001        (size_t) [4294967297]
+	[RSP+590 ] 0x100000001        (size_t) [4294967297]
+	[RSP+598 ] 0x7FF71C4170F8     (void* -> SkyrimSE.exe+1A470F8	jo 0x00007FF71C41708A)
+	[RSP+5A0 ] 0x0                (size_t) [0]
+	[RSP+5A8 ] 0x0                (size_t) [0]
+	[RSP+5B0 ] 0x8000000000       (size_t) [549755813888]
+	[RSP+5B8 ] 0x0                (size_t) [0]
+	[RSP+5C0 ] 0x9FB3DAEC18       (NiMemStream*) See RSP+280
+	[RSP+5C8 ] 0x0                (size_t) [0]
+	[RSP+5D0 ] 0x7FF71C417148     (void* -> SkyrimSE.exe+1A47148	push rax)
+	[RSP+5D8 ] 0x25               (size_t) [37]
+	[RSP+5E0 ] 0x1A65C8F3CE8      (void*)
+	[RSP+5E8 ] 0x1                (size_t) [1]
+	[RSP+5F0 ] 0x0                (size_t) [0]
+	[RSP+5F8 ] 0x0                (size_t) [0]
+	[RSP+600 ] 0x0                (size_t) [0]
+	[RSP+608 ] 0x0                (size_t) [0]
+	[RSP+610 ] 0x0                (size_t) [0]
+	[RSP+618 ] 0x0                (size_t) [0]
+	[RSP+620 ] 0xFFFFFFFF00000002 (size_t) [uint: 18446744069414584322 int: -4294967294]
+	[RSP+628 ] 0xFFFFFFFF         (size_t) [4294967295]
+	[RSP+630 ] 0x0                (size_t) [0]
+	[RSP+638 ] 0x0                (size_t) [0]
+	[RSP+640 ] 0x0                (size_t) [0]
+	[RSP+648 ] 0x0                (size_t) [0]
+	[RSP+650 ] 0x0                (size_t) [0]
+	[RSP+658 ] 0x0                (size_t) [0]
+	[RSP+660 ] 0x0                (size_t) [0]
+	[RSP+668 ] 0x0                (size_t) [0]
+	[RSP+670 ] 0x0                (size_t) [0]
+	[RSP+678 ] 0x0                (size_t) [0]
+	[RSP+680 ] 0x0                (size_t) [0]
+	[RSP+688 ] 0x0                (size_t) [0]
+	[RSP+690 ] 0x0                (size_t) [0]
+	[RSP+698 ] 0x0                (size_t) [0]
+	[RSP+6A0 ] 0x0                (size_t) [0]
+	[RSP+6A8 ] 0x0                (size_t) [0]
+	[RSP+6B0 ] 0x0                (size_t) [0]
+	[RSP+6B8 ] 0x0                (size_t) [0]
+	[RSP+6C0 ] 0x0                (size_t) [0]
+	[RSP+6C8 ] 0x0                (size_t) [0]
+	[RSP+6D0 ] 0x0                (size_t) [0]
+	[RSP+6D8 ] 0x0                (size_t) [0]
+	[RSP+6E0 ] 0x0                (size_t) [0]
+	[RSP+6E8 ] 0x0                (size_t) [0]
+	[RSP+6F0 ] 0x0                (size_t) [0]
+	[RSP+6F8 ] 0x0                (size_t) [0]
+	[RSP+700 ] 0x0                (size_t) [0]
+	[RSP+708 ] 0x0                (size_t) [0]
+	[RSP+710 ] 0x0                (size_t) [0]
+	[RSP+718 ] 0x0                (size_t) [0]
+	[RSP+720 ] 0x0                (size_t) [0]
+	[RSP+728 ] 0x0                (size_t) [0]
+	[RSP+730 ] 0x10000000000      (size_t) [1099511627776]
+	[RSP+738 ] 0x1A5AFFD8F98      (void*)
+	[RSP+740 ] 0xFFFFFFFFFFFFFFFE (size_t) [uint: 18446744073709551614 int: -2]
+	[RSP+748 ] 0x1                (size_t) [1]
+	[RSP+750 ] 0x0                (size_t) [0]
+	[RSP+758 ] 0x7FF71B6AE75E     (void* -> SkyrimSE.exe+0CDE75E	mov rbx, [rsp+0x30])
+	[RSP+760 ] 0x7FF71E06A810     (void* -> SkyrimSE.exe+369A810	add [rax], eax)
+	[RSP+768 ] 0x0                (size_t) [0]
+	[RSP+770 ] 0x0                (size_t) [0]
+	[RSP+778 ] 0x0                (size_t) [0]
+	[RSP+780 ] 0x0                (size_t) [0]
+	[RSP+788 ] 0x0                (size_t) [0]
+	[RSP+790 ] 0x9FB3DAF1B8       (void*)
+	[RSP+798 ] 0x7FF71DC43CE0     (void* -> SkyrimSE.exe+3273CE0	rol byte ptr [rdi], 0x01)
+	[RSP+7A0 ] 0x0                (size_t) [0]
+	[RSP+7A8 ] 0x1A65CA2EB80      (void*)
+	[RSP+7B0 ] 0x7FF71DC43BC0     (BSSmallBlockAllocator*) See RCX
+	[RSP+7B8 ] 0x7FF71B6BA6A0     (void* -> SkyrimSE.exe+0CEA6A0	test dil, dil)
+	[RSP+7C0 ] 0x7FF71DC43CC0     (void* -> SkyrimSE.exe+3273CC0	)
+	[RSP+7C8 ] 0x1A5AFFD8F90      (MemoryHeap*) See R12
+	[RSP+7D0 ] 0x1A6548F0AC8      (void*)
+	[RSP+7D8 ] 0x7FF71DC43CC0     (void* -> SkyrimSE.exe+3273CC0	)
+	[RSP+7E0 ] 0x0                (size_t) [0]
+	[RSP+7E8 ] 0x1A65C8E8A88      (void*)
+	[RSP+7F0 ] 0x7FF71AB22030     (void* -> SkyrimSE.exe+0152030	sub rsp, 0x38)
+	[RSP+7F8 ] 0xFFFFFFFFFFFFFFFF (size_t) [uint: 18446744073709551615 int: -1]
+	[RSP+800 ] 0x0                (size_t) [0]
+	[RSP+808 ] 0x7FF71B6AE732     (void* -> SkyrimSE.exe+0CDE732	mov rbx, [rsp+0x30])
+	[RSP+810 ] 0x7FF71E06A810     (void* -> SkyrimSE.exe+369A810	add [rax], eax)
+	[RSP+818 ] 0x4                (size_t) [4]
+	[RSP+820 ] 0x3                (size_t) [3]
+	[RSP+828 ] 0x7FF71BF78009     (void* -> SkyrimSE.exe+15A8009	add rdi, rsi)
+	[RSP+830 ] 0x4                (size_t) [4]
+	[RSP+838 ] 0x0                (size_t) [0]
+	[RSP+840 ] 0x0                (size_t) [0]
+	[RSP+848 ] 0x0                (size_t) [0]
+	[RSP+850 ] 0x0                (size_t) [0]
+	[RSP+858 ] 0x0                (size_t) [0]
+	[RSP+860 ] 0x0                (size_t) [0]
+	[RSP+868 ] 0x0                (size_t) [0]
+	[RSP+870 ] 0x0                (size_t) [0]
+	[RSP+878 ] 0x0                (size_t) [0]
+	[RSP+880 ] 0x0                (size_t) [0]
+	[RSP+888 ] 0x0                (size_t) [0]
+	[RSP+890 ] 0x0                (size_t) [0]
+	[RSP+898 ] 0x0                (size_t) [0]
+	[RSP+8A0 ] 0x0                (size_t) [0]
+	[RSP+8A8 ] 0x0                (size_t) [0]
+	[RSP+8B0 ] 0x0                (size_t) [0]
+	[RSP+8B8 ] 0x0                (size_t) [0]
+	[RSP+8C0 ] 0x0                (size_t) [0]
+	[RSP+8C8 ] 0x0                (size_t) [0]
+	[RSP+8D0 ] 0x0                (size_t) [0]
+	[RSP+8D8 ] 0x0                (size_t) [0]
+	[RSP+8E0 ] 0x0                (size_t) [0]
+	[RSP+8E8 ] 0x0                (size_t) [0]
+	[RSP+8F0 ] 0x0                (size_t) [0]
+	[RSP+8F8 ] 0x0                (size_t) [0]
+	[RSP+900 ] 0x0                (size_t) [0]
+	[RSP+908 ] 0x0                (size_t) [0]
+	[RSP+910 ] 0x0                (size_t) [0]
+	[RSP+918 ] 0x0                (size_t) [0]
+	[RSP+920 ] 0x0                (size_t) [0]
+	[RSP+928 ] 0x0                (size_t) [0]
+	[RSP+930 ] 0x0                (size_t) [0]
+	[RSP+938 ] 0xFFFFFFFF00000000 (size_t) [uint: 18446744069414584320 int: -4294967296]
+	[RSP+940 ] 0x1A65C8F24A0      (NiNode*) See RSP+2E0
+	[RSP+948 ] 0x31               (size_t) [49]
+	[RSP+950 ] 0x1A65C8F1200      (BSDynamicTriShape*) See RSP+950
+	[RSP+958 ] 0x7FFD2F41A947     (void* -> skee64.dll+015A947	nop |  virtual void SKSETaskExportHead::Run(void) [?Run@SKSETaskExportHead@@UEAAXXZ])
+	[RSP+960 ] 0x1A65BBE3290      (BSLightingShaderMaterialHairTint*) See RSP+960
+	[RSP+968 ] 0x1A600000000      (size_t) [1812476198912]
+	[RSP+970 ] 0x1A65C8F1380      (BSDynamicTriShape*) See RSP+970
+	[RSP+978 ] 0x0                (size_t) [0]
+	[RSP+980 ] 0x9FB3DAF700       (void*)
+	[RSP+988 ] 0x1A81D300E00      (void*)
+	[RSP+990 ] 0x1A65BC61AD0      (BSLightingShaderMaterialHairTint*) See RSP+990
+	[RSP+998 ] 0x9FB3DAF348       (void*)
+	[RSP+9A0 ] 0x1A82C65CBA0      (SKSETaskExportHead*) See RSP+9A0
+	[RSP+9A8 ] 0x1A65C8F0300      (BSDynamicTriShape*) See RSP+9A8
+	[RSP+9B0 ] 0x31               (size_t) [49]
+	[RSP+9B8 ] 0x1A65C208DC0      (BSLightingShaderProperty*)
+		Flags: 0x81818E440303
+		RTTIName: "BSLightingShaderProperty"
+		NiPropertyType: kShade (01)
+	[RSP+9C0 ] 0x1A65C208DC0      (BSLightingShaderProperty*) See RSP+1B8
+	[RSP+9C8 ] 0x38               (size_t) [56]
+	[RSP+9D0 ] 0x1A65C8F1200      (BSDynamicTriShape*) See RSP+950
+	[RSP+9D8 ] 0x0                (size_t) [0]
+	[RSP+9E0 ] 0x1A81DB25D40      (void*)
+	[RSP+9E8 ] 0x7FF700000004     (size_t) [140698833649668]
+	[RSP+9F0 ] 0x1A81DB25D40      (void*)
+	[RSP+9F8 ] 0x0                (size_t) [0]
+	[RSP+A00 ] 0x0                (size_t) [0]
+	[RSP+A08 ] 0x0                (size_t) [0]
+	[RSP+A10 ] 0x1A65C59EAC0      (BSFadeNode*) See RSP+A10
+	[RSP+A18 ] 0x1A8719DBE40      (void*)
+	[RSP+A20 ] 0x4                (size_t) [4]
+	[RSP+A28 ] 0x0                (size_t) [0]
+	[RSP+A30 ] 0x9FB3DAF7B8       (void*)
+	[RSP+A38 ] 0x1A652983880      (TESNPC*) See RSP+A38
+	[RSP+A40 ] 0x1A65C484438      (BSFaceGenNiNode*) See RSP+A40
+	[RSP+A48 ] 0x0                (size_t) [0]
+	[RSP+A50 ] 0x1A63CD2F850      (BSFaceGenAnimationData*) See RSP+A50
+	[RSP+A58 ] 0x1A65C8F24A0      (NiNode*) See RSP+2E0
+	[RSP+A60 ] 0x4331000045517000 (size_t) [4841651075562958848]
+	[RSP+A68 ] 0x1A65C208DC0      (BSLightingShaderProperty*) See RSP+1B8
+	[RSP+A70 ] 0xC5C25800         (size_t) [3317848064]
+	[RSP+A78 ] 0x429000003F800000 (size_t) [4796333604214931456]
+	[RSP+A80 ] 0x0                (size_t) [0]
+	[RSP+A88 ] 0x9FB3DAF698       (void*)
+	[RSP+A90 ] 0x1A81D411B70      (void*)
+	[RSP+A98 ] 0xEEAB67742D1      (size_t) [16401246405329]
+	[RSP+AA0 ] 0x0                (size_t) [0]
+	[RSP+AA8 ] 0x0                (size_t) [0]
+	[RSP+AB0 ] 0x43F0000000000000 (size_t) [4895412794951729152]
+	[RSP+AB8 ] 0x0                (size_t) [0]
+	[RSP+AC0 ] 0x3F4CC899         (size_t) [1061996697]
+	[RSP+AC8 ] 0x0                (size_t) [0]
+	[RSP+AD0 ] 0xEEAB6774391      (size_t) [16401246405521]
+	[RSP+AD8 ] 0x1A81E17A840      (void*)
+	[RSP+AE0 ] 0x1A81D411978      (void*)
+	[RSP+AE8 ] 0x7FF71B70571D     (void* -> SkyrimSE.exe+0D3571D	mov rcx, rax)
+	[RSP+AF0 ] 0x0                (size_t) [0]
+	[RSP+AF8 ] 0x0                (size_t) [0]
+	[RSP+B00 ] 0x1A81D411B90      (void*)
+	[RSP+B08 ] 0x22               (size_t) [34]
+	[RSP+B10 ] 0x23               (size_t) [35]
+	[RSP+B18 ] 0x7FF71B6F3BF0     (void* -> SkyrimSE.exe+0D23BF0	add rsp, 0x310)
+	[RSP+B20 ] 0x22               (size_t) [34]
+	[RSP+B28 ] 0xF                (size_t) [15]
+	[RSP+B30 ] 0x9FB3DAF590       (void*)
+	[RSP+B38 ] 0xF                (size_t) [15]
+	[RSP+B40 ] 0x9FB3DAF4F2       (void*)
+	[RSP+B48 ] 0x0                (size_t) [0]
+	[RSP+B50 ] 0x4623EC0000000000 (size_t) [5054142691583983616]
+	[RSP+B58 ] 0x1A81DB25D40      (void*)
+	[RSP+B60 ] 0x1A800000000      (void*)
+	[RSP+B68 ] 0x0                (size_t) [0]
+	[RSP+B70 ] 0x460EBC0000000000 (size_t) [5048178940514926592]
+	[RSP+B78 ] 0x1A81E17A840      (void*)
+	[RSP+B80 ] 0x1004C00          (size_t) [16796672]
+	[RSP+B88 ] 0x0                (size_t) [0]
+	[RSP+B90 ] 0x1A81D411968      (void*)
+	[RSP+B98 ] 0x1A81D411800      (void*)
+	[RSP+BA0 ] 0x1A81CE443E0      (void*)
+	[RSP+BA8 ] 0x0                (size_t) [0]
+	[RSP+BB0 ] 0x2400000024       (size_t) [154618822692]
+	[RSP+BB8 ] 0x24               (size_t) [36]
+	[RSP+BC0 ] 0x1A81DB25D40      (void*)
+	[RSP+BC8 ] 0x0                (size_t) [0]
+	[RSP+BD0 ] 0x7FF71C3F8CE8     (void* -> SkyrimSE.exe+1A28CE8	and bh, cl)
+	[RSP+BD8 ] 0x7FF71B6DBF30     (void* -> SkyrimSE.exe+0D0BF30	cmp eax, 0x17)
+	[RSP+BE0 ] 0x100              (size_t) [256]
+	[RSP+BE8 ] 0x0                (size_t) [0]
+	[RSP+BF0 ] 0x1A81E11000A      (void*)
+	[RSP+BF8 ] 0x7FF71B73292E     (void* -> SkyrimSE.exe+0D6292E	add rsp, 0xD0)
+	[RSP+C00 ] 0x1A81E0F6B10      (void*)
+	[RSP+C08 ] 0x3                (size_t) [3]
+	[RSP+C10 ] 0x1A81D14CF10      (void*)
+	[RSP+C18 ] 0x7FF71B71D8DA     (void* -> SkyrimSE.exe+0D4D8DA	add rsp, 0x1D8)
+	[RSP+C20 ] 0x9FB3DAF650       (void*)
+	[RSP+C28 ] 0x7FF71B6E2A8B     (void* -> SkyrimSE.exe+0D12A8B	mov al, 0x01)
+	[RSP+C30 ] 0x1A81DB2C438      (void*)
+	[RSP+C38 ] 0x1A81DB2C400      (void*)
+	[RSP+C40 ] 0x9FB3DAF650       (void*)
+	[RSP+C48 ] 0x7FF71B6DCE7A     (void* -> SkyrimSE.exe+0D0CE7A	xor edi, edi)
+	[RSP+C50 ] 0x1A81D14A7B0      (void*)
+	[RSP+C58 ] 0x1A81DB2C400      (void*)
+	[RSP+C60 ] 0x5                (size_t) [5]
+	[RSP+C68 ] 0x0                (size_t) [0]
+	[RSP+C70 ] 0xFFFFFFFFFFFFFFF0 (size_t) [uint: 18446744073709551600 int: -16]
+	[RSP+C78 ] 0x7FF71B7892A9     (void* -> SkyrimSE.exe+0DB92A9	mov rbx, [rsp+0xC0])
+	[RSP+C80 ] 0x0                (size_t) [0]
+	[RSP+C88 ] 0x1A81D14A7B4      (void*)
+	[RSP+C90 ] 0x1A81D14A000      (void*)
+	[RSP+C98 ] 0x1A81D8BC400      (void*)
+	[RSP+CA0 ] 0x1A81DB29760      (void*)
+	[RSP+CA8 ] 0x9FB3DAF6D0       (void*)
+	[RSP+CB0 ] 0x1A81D906010      (void*)
+	[RSP+CB8 ] 0x7FF71B733990     (void* -> SkyrimSE.exe+0D63990	mov rcx, [rsp+0x80])
+	[RSP+CC0 ] 0x1A81D906010      (void*)
+	[RSP+CC8 ] 0x9FB3DAF6E0       (void*)
+	[RSP+CD0 ] 0x1A81D14CF10      (void*)
+	[RSP+CD8 ] 0x7FF71B6E29FF     (void* -> SkyrimSE.exe+0D129FF	test rax, rax)
+	[RSP+CE0 ] 0x6                (size_t) [6]
+	[RSP+CE8 ] 0x0                (size_t) [0]
+	[RSP+CF0 ] 0x0                (size_t) [0]
+	[RSP+CF8 ] 0x7FF71B6F78A5     (void* -> SkyrimSE.exe+0D278A5	movsxd rcx, eax)
+	[RSP+D00 ] 0x1A81D14A7B0      (void*)
+	[RSP+D08 ] 0x9FB3DAF740       (void*)
+	[RSP+D10 ] 0x9FB3DAF840       (void*)
+	[RSP+D18 ] 0x1A81D843810      (void*)
+	[RSP+D20 ] 0x9FB3DAF800       (void*)
+	[RSP+D28 ] 0x7FF71B733990     (void* -> SkyrimSE.exe+0D63990	mov rcx, [rsp+0x80])
+	[RSP+D30 ] 0xEEAB6774571      (size_t) [16401246406001]
+	[RSP+D38 ] 0x7FF71B788F83     (void* -> SkyrimSE.exe+0DB8F83	mov al, 0x01)
+	[RSP+D40 ] 0xFFFFFFFFFFFFFFF0 (size_t) [uint: 18446744073709551600 int: -16]
+	[RSP+D48 ] 0x7FF71B6F78A5     (void* -> SkyrimSE.exe+0D278A5	movsxd rcx, eax)
+	[RSP+D50 ] 0x9FB3DAF740       (void*)
+	[RSP+D58 ] 0x9FB3DAF6D0       (void*)
+	[RSP+D60 ] 0x7FF71C404AD0     (void* -> SkyrimSE.exe+1A34AD0	mov al, 0x8D)
+	[RSP+D68 ] 0x0                (size_t) [0]
+	[RSP+D70 ] 0x0                (size_t) [0]
+	[RSP+D78 ] 0x7FF71B78F4F8     (void* -> SkyrimSE.exe+0DBF4F8	test edi, edi)
+	[RSP+D80 ] 0xFFFFFFFFFFFFFFF0 (size_t) [uint: 18446744073709551600 int: -16]
+	[RSP+D88 ] 0x5                (size_t) [5]
+	[RSP+D90 ] 0x9FB3DAF820       (void*)
+	[RSP+D98 ] 0x0                (size_t) [0]
+	[RSP+DA0 ] 0x0                (size_t) [0]
+	[RSP+DA8 ] 0x7FF71B733EA3     (void* -> SkyrimSE.exe+0D63EA3	test al, al)
+	[RSP+DB0 ] 0x40               (size_t) [64]
+	[RSP+DB8 ] 0xFF000000         (size_t) [4278190080]
+	[RSP+DC0 ] 0x1A81D14AA80      (void*)
+	[RSP+DC8 ] 0x7FF71B78F576     (void* -> SkyrimSE.exe+0DBF576	add rsp, 0x48)
+	[RSP+DD0 ] 0x1A81DB299D0      (void*)
+	[RSP+DD8 ] 0xFFFFFFFFFFFFFFF0 (size_t) [uint: 18446744073709551600 int: -16]
+	[RSP+DE0 ] 0x0                (size_t) [0]
+	[RSP+DE8 ] 0x1                (size_t) [1]
+	[RSP+DF0 ] 0x0                (size_t) [0]
+	[RSP+DF8 ] 0x1A81D14A7B0      (void*)
+	[RSP+E00 ] 0x5                (size_t) [5]
+	[RSP+E08 ] 0x0                (size_t) [0]
+	[RSP+E10 ] 0x1A81D14A000      (void*)
+	[RSP+E18 ] 0x7FF71B71DDCE     (void* -> SkyrimSE.exe+0D4DDCE	mov r12, [rsp+0x80])
+	[RSP+E20 ] 0x0                (size_t) [0]
+	[RSP+E28 ] 0x1                (size_t) [1]
+	[RSP+E30 ] 0x1A81D91DCB0      (void*)
+	[RSP+E38 ] 0x1A81CD44D70      (CursorMenu*) See RSP+E38
+	[RSP+E40 ] 0x0                (size_t) [0]
+	[RSP+E48 ] 0x0                (size_t) [0]
+	[RSP+E50 ] 0x40               (size_t) [64]
+	[RSP+E58 ] 0x80000000000D     (size_t) [140737488355341]
+	[RSP+E60 ] 0x1A81D14A000      (void*)
+	[RSP+E68 ] 0x0                (size_t) [0]
+	[RSP+E70 ] 0x0                (size_t) [0]
+	[RSP+E78 ] 0x1                (size_t) [1]
+	[RSP+E80 ] 0x1                (size_t) [1]
+	[RSP+E88 ] 0x1A81D843978      (void*)
+	[RSP+E90 ] 0x0                (size_t) [0]
+	[RSP+E98 ] 0x7FF71B71DC39     (void* -> SkyrimSE.exe+0D4DC39	mov rcx, [rsp+0x38])
+	[RSP+EA0 ] 0x1A81D843A68      (void*)
+	[RSP+EA8 ] 0x1A81D843A68      (void*)
+	[RSP+EB0 ] 0x9F00000000       (size_t) [682899800064]
+	[RSP+EB8 ] 0x1A81D1490D0      (void*)
+	[RSP+EC0 ] 0xA                (size_t) [10]
+	[RSP+EC8 ] 0x7FF71C3FB130     (void* -> SkyrimSE.exe+1A2B130	)
+	[RSP+ED0 ] 0x0                (size_t) [0]
+	[RSP+ED8 ] 0x0                (size_t) [0]
+	[RSP+EE0 ] 0x1A81D14A068      (void*)
+	[RSP+EE8 ] 0x7FF71B716B89     (void* -> SkyrimSE.exe+0D46B89	mov rdx, rax)
+	[RSP+EF0 ] 0x2                (size_t) [2]
+	[RSP+EF8 ] 0x1A81CD40000      (void*)
+	[RSP+F00 ] 0x1A81D14A068      (void*)
+	[RSP+F08 ] 0x7FF71B7C0EE1     (void* -> SkyrimSE.exe+0DF0EE1	mov rcx, [0x00007FF71DC466D8])
+	[RSP+F10 ] 0x1                (size_t) [1]
+	[RSP+F18 ] 0x1A81D14C510      (void*)
+	[RSP+F20 ] 0x0                (size_t) [0]
+	[RSP+F28 ] 0x1A81BF9A101      (void*)
+	[RSP+F30 ] 0x1                (size_t) [1]
+	[RSP+F38 ] 0x7FF71B71487C     (void* -> SkyrimSE.exe+0D4487C	add rsp, 0x108)
+	[RSP+F40 ] 0x4F1D8E40DA       (size_t) [339798278362]
+	[RSP+F48 ] 0x0                (size_t) [0]
+	[RSP+F50 ] 0x1A81D14A068      (void*)
+	[RSP+F58 ] 0x1A81BF9B010      (void*)
+	[RSP+F60 ] 0x1A81BF9DD10      (LocaleManager*) See RSP+F60
+	[RSP+F68 ] 0x0                (size_t) [0]
+	[RSP+F70 ] 0x1                (size_t) [1]
+	[RSP+F78 ] 0x7E95B0679        (size_t) [33979827833]
+	[RSP+F80 ] 0x0                (size_t) [0]
+	[RSP+F88 ] 0x0                (size_t) [0]
+	[RSP+F90 ] 0x1A81CF6FFE0      (FxDelegate*) See RSP+F90
+	[RSP+F98 ] 0x0                (size_t) [0]
+	[RSP+FA0 ] 0x7FF71DC016D0     (SkyrimVM*) See RSP+FA0
+	[RSP+FA8 ] 0x1A5AFF999B0      (void*)
+	[RSP+FB0 ] 0x0                (size_t) [0]
+	[RSP+FB8 ] 0x7FFDCA8AD0E0     (SKSEDelayFunctorManager*) See RSP+FB8
+	[RSP+FC0 ] 0x7FFDCA8AD0F0     (void* -> skse64_1_7_104.dll+011D0F0	)
+	[RSP+FC8 ] 0x7FF71B0342DB     (void* -> SkyrimSE.exe+06642DB	movzx ecx, al)
+	[RSP+FD0 ] 0x0                (size_t) [0]
+	[RSP+FD8 ] 0x7FF71DBD4B40     (void* -> SkyrimSE.exe+3204B40	add [rax], al)
+	[RSP+FE0 ] 0x0                (size_t) [0]
+	[RSP+FE8 ] 0x0                (size_t) [0]
+	[RSP+FF0 ] 0xFB4              (size_t) [4020]
+	[RSP+FF8 ] 0x7FF71B037523     (void* -> SkyrimSE.exe+0667523	lea r11, [rsp+0x130])
+
+MODULES:
+	XINPUT1_3.dll                          0x000000400000
+	X3DAudio1_7.dll                        0x000054460000
+	mdnsNSP.dll                            0x000055760000
+	amdenc64.dll                           0x000056BF0000
+	SkyrimSE.exe                           0x7FF71A9D0000
+	skee64.dll                             0x7FFD2F2C0000
+	po3_PapyrusExtender.dll                0x7FFD2FAA0000
+	OStim.dll                              0x7FFD2FDA0000
+	hdtsmp64.dll                           0x7FFD30620000
+	DbSkseFunctions.dll                    0x7FFD323F0000
+	CrashLogger.dll                        0x7FFD69260000
+	OpenAnimationReplacer.dll              0x7FFD69D80000
+	JContainers64.dll                      0x7FFD7A3D0000
+	gameoverlayrenderer64.dll              0x7FFD8BE60000
+	ConsoleUtilSSE.dll                     0x7FFD90380000
+	nvppex.dll                             0x7FFD91210000
+	steamclient64.dll                      0x7FFD92EE0000
+	DINPUT8.dll                            0x7FFDA6640000
+	ResampleDmo.DLL                        0x7FFDA66F0000
+	DSOUND.DLL                             0x7FFDA67B0000
+	tier0_s64.dll                          0x7FFDA8950000
+	vstdlib_s64.dll                        0x7FFDAAD50000
+	winmmbase.dll                          0x7FFDAAE50000
+	xinput1_4.dll                          0x7FFDAB320000
+	msdmo.dll                              0x7FFDACE20000
+	TheNewGentleman.dll                    0x7FFDB3C70000
+	ScaleformTranslationPP.dll             0x7FFDB4A90000
+	SKSEMenuFramework.dll                  0x7FFDB5050000
+	po3_KeywordItemDistributor.dll         0x7FFDB5650000
+	po3_Tweaks.dll                         0x7FFDBACA0000
+	po3_EnhancedInvisibility.dll           0x7FFDBBC10000
+	PapyrusUtil.dll                        0x7FFDBC140000
+	PapyrusTweaks.dll                      0x7FFDBF680000
+	OSLAroused.dll                         0x7FFDBF750000
+	XAudio2_7.dll                          0x7FFDC0670000
+	MCMHelper.dll                          0x7FFDC1A30000
+	cbp.dll                                0x7FFDC1E30000
+	AccuratePenetration.dll                0x7FFDC1F60000
+	fnis_aa.dll                            0x7FFDC7F90000
+	BackportedESLSupport.dll               0x7FFDC8070000
+	SSEDisplayTweaks.dll                   0x7FFDC8910000
+	PapyrusIniManipulator.dll              0x7FFDC9050000
+	skse64_1_7_104.dll                     0x7FFDCA790000
+	PairedAnimationImprovements.dll        0x7FFDCB190000
+	ncryptsslp.dll                         0x7FFDD68A0000
+	MediaKeysFix.dll                       0x7FFDD6C60000
+	FaceGenFixes.dll                       0x7FFDD7B20000
+	AutoInputSwitch.dll                    0x7FFDD7DB0000
+	AnimationQueueFix.dll                  0x7FFDE2660000
+	nvwgf2umx.dll                          0x7FFE02640000
+	nvgpucomp64.dll                        0x7FFE07C50000
+	nvldumdx.dll                           0x7FFE0EB60000
+	AHZmoreHUDPlugin.dll                   0x7FFE1D730000
+	inputhost.dll                          0x7FFE1D8E0000
+	bink2w64.dll                           0x7FFE1F350000
+	NvMemMapStoragex.dll                   0x7FFE20FB0000
+	VCOMP140.DLL                           0x7FFE21F40000
+	DINPUT8.dll                            0x7FFE23380000
+	Windows.UI.dll                         0x7FFE25E60000
+	OneCoreCommonProxyStub.dll             0x7FFE26340000
+	dbgcore.DLL                            0x7FFE26550000
+	steam_api64.dll                        0x7FFE28EE0000
+	webio.dll                              0x7FFE29D60000
+	ApplicationTargetedFeatureDatabase.dll 0x7FFE2DD70000
+	textinputframework.dll                 0x7FFE2DDE0000
+	AchievementsModsEnabler.dll            0x7FFE2EBE0000
+	MPR.dll                                0x7FFE303D0000
+	nvspcap64.dll                          0x7FFE31750000
+	MSVCP140_ATOMIC_WAIT.dll               0x7FFE3A9B0000
+	VCRUNTIME140.dll                       0x7FFE3C210000
+	VCRUNTIME140_1.dll                     0x7FFE3C460000
+	MSVCP140.dll                           0x7FFE3C470000
+	windows.staterepositorycore.dll        0x7FFE3CB80000
+	NvMessageBus.dll                       0x7FFE3D540000
+	AchievementsModsEnablerLoader.dll      0x7FFE41400000
+	d3dx9_42.dll                           0x7FFE414A0000
+	AUDIOSES.DLL                           0x7FFE42630000
+	OneCoreUAPCommonProxyStub.dll          0x7FFE42C60000
+	amdihk64.dll                           0x7FFE43870000
+	atidxx64.dll                           0x7FFE43F10000
+	MMDevApi.dll                           0x7FFE44320000
+	WINMM.dll                              0x7FFE44870000
+	amdxx64.dll                            0x7FFE449A0000
+	CoreUIComponents.dll                   0x7FFE47FC0000
+	drvstore.dll                           0x7FFE49820000
+	cryptnet.dll                           0x7FFE499A0000
+	VERSION.dll                            0x7FFE49EE0000
+	npmproxy.dll                           0x7FFE4A500000
+	rasadhlp.dll                           0x7FFE4B280000
+	WinTypes.dll                           0x7FFE4B330000
+	avrt.dll                               0x7FFE4B750000
+	directxdatabasehelper.dll              0x7FFE4B800000
+	WINHTTP.dll                            0x7FFE4B8F0000
+	twinapi.appcore.dll                    0x7FFE4BA90000
+	netprofm.dll                           0x7FFE4C280000
+	fwpuclnt.dll                           0x7FFE4CB00000
+	Microsoft.Internal.WarpPal.dll         0x7FFE4CF10000
+	D3DCOMPILER_47.dll                     0x7FFE4CF30000
+	d3d11.dll                              0x7FFE4DEB0000
+	dcomp.dll                              0x7FFE4E120000
+	CoreMessaging.dll                      0x7FFE4E790000
+	wevtapi.dll                            0x7FFE4EC20000
+	Secur32.dll                            0x7FFE4EDA0000
+	apphelp.dll                            0x7FFE4F1E0000
+	uxtheme.dll                            0x7FFE4F720000
+	dxgi.dll                               0x7FFE4F8C0000
+	dwmapi.dll                             0x7FFE4FA20000
+	WINNSI.DLL                             0x7FFE4FAA0000
+	dxcore.dll                             0x7FFE4FB20000
+	resourcepolicyclient.dll               0x7FFE4FEA0000
+	dbghelp.dll                            0x7FFE502C0000
+	windows.storage.dll                    0x7FFE50580000
+	HID.DLL                                0x7FFE50E20000
+	IPHLPAPI.DLL                           0x7FFE512B0000
+	DNSAPI.dll                             0x7FFE512F0000
+	UMPDC.dll                              0x7FFE51600000
+	powrprof.dll                           0x7FFE51620000
+	schannel.DLL                           0x7FFE51710000
+	rsaenh.dll                             0x7FFE51840000
+	kernel.appcore.dll                     0x7FFE518E0000
+	ntmarta.dll                            0x7FFE51A10000
+	SSPICLI.DLL                            0x7FFE51B90000
+	DSPARSE.dll                            0x7FFE51C70000
+	MSWSOCK.dll                            0x7FFE51E90000
+	cryptsp.dll                            0x7FFE52180000
+	CRYPTBASE.DLL                          0x7FFE521A0000
+	wldp.dll                               0x7FFE52260000
+	msasn1.dll                             0x7FFE522D0000
+	NTASN1.dll                             0x7FFE52370000
+	ncrypt.dll                             0x7FFE523C0000
+	devobj.dll                             0x7FFE52710000
+	cfgmgr32.DLL                           0x7FFE52770000
+	DPAPI.DLL                              0x7FFE527D0000
+	bcrypt.dll                             0x7FFE529C0000
+	profapi.dll                            0x7FFE529F0000
+	CRYPT32.dll                            0x7FFE52AD0000
+	bcryptPrimitives.dll                   0x7FFE52C60000
+	msvcp_win.dll                          0x7FFE52D20000
+	KERNELBASE.dll                         0x7FFE52DD0000
+	win32u.dll                             0x7FFE531E0000
+	gdi32full.dll                          0x7FFE53210000
+	wintrust.dll                           0x7FFE53340000
+	ucrtbase.dll                           0x7FFE53490000
+	clbcatq.dll                            0x7FFE536F0000
+	PSAPI.DLL                              0x7FFE53990000
+	SETUPAPI.dll                           0x7FFE539A0000
+	IMM32.DLL                              0x7FFE53E30000
+	USER32.dll                             0x7FFE53E70000
+	WS2_32.dll                             0x7FFE540D0000
+	ole32.dll                              0x7FFE54160000
+	RPCRT4.dll                             0x7FFE54300000
+	msvcrt.dll                             0x7FFE544A0000
+	combase.dll                            0x7FFE54560000
+	SHCORE.dll                             0x7FFE548F0000
+	OLEAUT32.dll                           0x7FFE54A50000
+	SHLWAPI.dll                            0x7FFE54B30000
+	GDI32.dll                              0x7FFE54CA0000
+	sechost.dll                            0x7FFE54CD0000
+	KERNEL32.DLL                           0x7FFE54D80000
+	imagehlp.dll                           0x7FFE54E50000
+	NSI.dll                                0x7FFE54EA0000
+	ADVAPI32.dll                           0x7FFE54EB0000
+	MSCTF.dll                              0x7FFE54F80000
+	SHELL32.dll                            0x7FFE550F0000
+	ntdll.dll                              0x7FFE558C0000
+
+SKSE PLUGINS:
+	AccuratePenetration.dll
+	AchievementsModsEnablerLoader.dll v1.3
+	AHZmoreHUDPlugin.dll v5.4.4
+	AnimationQueueFix.dll v1.0.2
+	AutoInputSwitch.dll v1.3.1
+	BackportedESLSupport.dll
+	cbp.dll
+	ConsoleUtilSSE.dll v1.6.1
+	CrashLogger.dll v1.25
+	DbSkseFunctions.dll v0.0.1
+	FaceGenFixes.dll v1.0.4
+	fnis_aa.dll
+	hdtsmp64.dll v4.1.1
+	JContainers64.dll v4.3.2
+	MCMHelper.dll v1.6.3
+	MediaKeysFix.dll v1.0.2
+	OpenAnimationReplacer.dll v3.2.1
+	OSLAroused.dll v2.9.3
+	OStim.dll v7.5.1
+	PairedAnimationImprovements.dll v1.0.3
+	PapyrusIniManipulator.dll v1.9.9
+	PapyrusTweaks.dll v4.1.1
+	PapyrusUtil.dll
+	po3_EnhancedInvisibility.dll v1.4.2.1
+	po3_KeywordItemDistributor.dll v4.1.0.1
+	po3_PapyrusExtender.dll v6.5.2.1
+	po3_Tweaks.dll v1.17.1.1
+	ScaleformTranslationPP.dll v1.6.1
+	skee64.dll
+	SKSEMenuFramework.dll v3.14
+	SSEDisplayTweaks.dll v0.5.25
+	TheNewGentleman.dll v4.2.6
+
+PLUGINS:
+	Light: 41	Regular: 42	Total: 83
+	[ 0]     Skyrim.esm
+	[ 1]     Update.esm
+	[ 2]     Dawnguard.esm
+	[ 3]     HearthFires.esm
+	[ 4]     Dragonborn.esm
+	[ 5]     ccBGSSSE001-Fish.esm
+	[ 6]     ccBGSSSE025-AdvDSGS.esm
+	[ 7]     SGEyebrows.esp
+	[ 8]     ApachiiHair.esm
+	[ 9]     EFFCore.esm
+	[ A]     SexLabAroused.esm
+	[ B]     High Poly Head.esm
+	[ C]     zhizheneyes.esp
+	[ D]     KS Hairdo's.esp
+	[ E]     iNeed.esp
+	[ F]     iNeed - Extended.esp
+	[10]     0Kaidan.esp
+	[11]     ACatsLife.esp
+	[12]     TheEyesOfBeauty.esp
+	[13]     DU01DagothUrFollower.esp
+	[14]     Convenient Horses.esp
+	[15]     EFFDialogue.esp
+	[16]     garm_sr_no_armor.esp
+	[17]     Fluffworks.esp
+	[18]     sr_FillHerUp.esp
+	[19]     SexLabHorribleHarassment.esp
+	[1A]     SkyrimsGotTalent-Bards.esp
+	[1B]     OOD.esp
+	[1C]     OStimCommunityResource.esp
+	[1D]     OStimNG_NeetSound.esp
+	[1E]     RaceMenu.esp
+	[1F]     RaceMenuPlugin.esp
+	[20]     RaceMenuMorphsCBBE.esp
+	[21]     Nocollision_clutter_player.esp
+	[22]     AHZmoreHUD.esp
+	[23]     UnreadBooksGlow.esp
+	[24]     CustomLight.esp
+	[25]     YunDao_Hdt_Hair.esp
+	[26]     XPMSE.esp
+	[27]     BetterContainerControls.esp
+	[28]     UIExtensions.esp
+	[29]     FNIS.esp
+	[FE:  0] ccQDRSSE001-SurvivalMode.esl
+	[FE:  1] ccBGSSSE037-Curios.esl
+	[FE:  2] _ResourcePack.esl
+	[FE:  3] TheNewGentleman.esp
+	[FE:  4] iWant Widgets.esl
+	[FE:  5] Missing Follower Dialogue Fix.esp
+	[FE:  6] (SDZ21) Lovely Makeup 2.esp
+	[FE:  7] ZhizhenMakeup.esp
+	[FE:  8] Follower_Yoliya.esp
+	[FE:  9] SkyUI_SE.esp
+	[FE:  A] FF_Claude.esp
+	[FE:  B] FF_Gemini.esp
+	[FE:  C] Fluffworks - A Cat's life Patch.esp
+	[FE:  D] FlufyFoxLESBIANAnimObjects.esp
+	[FE:  E] FlufyFoxSOLOAnimObjects.esp
+	[FE:  F] NPCs Approach.esp
+	[FE: 10] OStim.esp
+	[FE: 11] OCum.esp
+	[FE: 12] BakaMotionData.esp
+	[FE: 13] Bound Companions.esp
+	[FE: 14] SLALAnimObjBillyy.esp
+	[FE: 15] Blood and OStim.esp
+	[FE: 16] OEdge.esp
+	[FE: 17] BA_BardSongs_AIO.esp
+	[FE: 18] CBBE.esp
+	[FE: 19] 3BBB.esp
+	[FE: 1A] SOSPhysicsManager.esp
+	[FE: 1B] (SDZ21) Natural Beauty Makeup.esp
+	[FE: 1C] Local Fast Travel.esp
+	[FE: 1D] InvisibilityRing.esp
+	[FE: 1E] MCMHelper.esp
+	[FE: 1F] Even More Eyes.esp
+	[FE: 20] Ostim On Demand - MCM.esp
+	[FE: 21] Sonders_Keyword_Distribution.esp
+	[FE: 22] OAroused.esp
+	[FE: 23] OSLAroused.esp
+	[FE: 24] LDD_BetterEyeShapeforHPH.esp
+	[FE: 25] ZhizhenBrows.esp
+	[FE: 26] Tullius Hair 3 SMP.esp
+	[FE: 27] Tullius Hair 3 SMP2.esp
+	[FE: 28] Tullius Hair 3 SMP3.esp
