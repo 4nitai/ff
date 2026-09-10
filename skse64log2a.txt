@@ -1,0 +1,123 @@
+[21:50:35.317] [8816 ] [I] skee v0-5-0-0
+[21:50:35.317] [8816 ] [I] default config path = C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition\Data\SKSE\Plugins\skee64.ini
+[21:50:35.317] [8816 ] [I] custom config path = C:\Program Files (x86)\Steam\steamapps\common\Skyrim Special Edition\Data\SKSE\Plugins\skee64_custom.ini
+[21:50:45.104] [33064] [I] BodyMorphInterface::Impl_ReadBodyMorphTemplates - Info - Loaded 39 template(s).	[Meshes\actors\character\BodyGenData\XPMSE.esp\templates.ini]
+[21:50:45.109] [33064] [I] BodyMorphInterface::Impl_ReadBodyMorphs - Info - Acquired 4048 male NPC target(s).	[Meshes\actors\character\BodyGenData\XPMSE.esp\morphs.ini]
+[21:50:45.109] [33064] [I] BodyMorphInterface::Impl_ReadBodyMorphs - Info - Acquired 4048 female NPC target(s).	[Meshes\actors\character\BodyGenData\XPMSE.esp\morphs.ini]
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for 0_FemaleHeadYolia on [1] using Nord. Vertex mismatch (Yoliya_Headpart\femaleheadchargen.tri - 3832 | Actors\Character\Character Assets\FemaleHeadCharGen.tri - 996).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for 0_FemaleBrowsYoliya on [1] using Nord. Vertex mismatch (Yoliya_Headpart\femaleheadbrowschargen.tri - 371 | Actors\Character\Character Assets\FaceParts\FemaleHeadBrowsCharGen.tri - 102).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleHeadArgonian on Argonian[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\MaleHeadArgonianChargen.tri - 1219 | Actors\Character\Character Assets\MaleHeadCustomizations.tri - 898).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleMouthArgonian on Argonian[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthArgonianChargen.tri - 478 | Actors\Character\Character Assets\Mouth\MouthHumanChargen.tri - 141).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleEyesArgonian on Argonian[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesArgonianChargen.tri - 50 | Actors\Character\Character Assets\EyesMaleCharGen.tri - 186).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleHeadArgonian on Argonian[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\FemaleHeadArgonianChargen.tri - 1219 | Actors\Character\Character Assets\FemaleHeadCharGen.tri - 996).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleEyesArgonian on Argonian[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesArgonianChargen.tri - 50 | Actors\Character\Character Assets\EyesFemaleChargen.tri - 176).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleMouthArgonian on Argonian[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthArgonianChargen.tri - 478 | Actors\Character\Character Assets\Mouth\MouthHumanFChargen.tri - 141).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleHeadArgonian on Argonian[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\MaleHeadArgonianChargen.tri - 1219 | Actors\Character\Character Assets\MaleHeadCustomizations.tri - 898).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleMouthArgonian on Argonian[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthArgonianChargen.tri - 478 | Actors\Character\Character Assets\Mouth\MouthHumanChargen.tri - 141).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleEyesArgonian on Argonian[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesArgonianChargen.tri - 50 | Actors\Character\Character Assets\EyesMaleCharGen.tri - 186).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleHeadArgonian on Argonian[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\FemaleHeadArgonianChargen.tri - 1219 | Actors\Character\Character Assets\FemaleHeadCharGen.tri - 996).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleMouthArgonian on Argonian[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthArgonianChargen.tri - 478 | Actors\Character\Character Assets\Mouth\MouthHumanFChargen.tri - 141).
+[21:50:45.173] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleEyesArgonian on Argonian[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesArgonianChargen.tri - 50 | Actors\Character\Character Assets\EyesFemaleChargen.tri - 176).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleHeadKhajiit on Khajiit[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\MaleHeadKhajiitChargen.tri - 1356 | Actors\Character\Character Assets\MaleHeadCustomizations.tri - 898).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleMouthKhajiit on Khajiit[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MaleMouthKhajiitChargen.tri - 643 | Actors\Character\Character Assets\Mouth\MouthHumanChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleEyesKhajiit on Khajiit[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesKhajiitChargen.tri - 50 | Actors\Character\Character Assets\EyesMaleCharGen.tri - 186).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleHeadKhajiit on Khajiit[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\FemaleHeadKhajiitChargen.tri - 1342 | Actors\Character\Character Assets\FemaleHeadCharGen.tri - 996).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleMouthKhajiit on Khajiit[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthKhajiitFemaleChargen.tri - 643 | Actors\Character\Character Assets\Mouth\MouthHumanFChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleEyesArgonian on Khajiit[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesKhajiitFemaleChargen.tri - 50 | Actors\Character\Character Assets\EyesFemaleChargen.tri - 176).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleHeadKhajiit on Khajiit[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\MaleHeadKhajiitChargen.tri - 1356 | Actors\Character\Character Assets\MaleHeadCustomizations.tri - 898).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleMouthKhajiit on Khajiit[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MaleMouthKhajiitChargen.tri - 643 | Actors\Character\Character Assets\Mouth\MouthHumanChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleEyesKhajiit on Khajiit[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesKhajiitChargen.tri - 50 | Actors\Character\Character Assets\EyesMaleCharGen.tri - 186).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleHeadKhajiit on Khajiit[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\FemaleHeadKhajiitChargen.tri - 1342 | Actors\Character\Character Assets\FemaleHeadCharGen.tri - 996).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleMouthKhajiit on Khajiit[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthKhajiitFemaleChargen.tri - 643 | Actors\Character\Character Assets\Mouth\MouthHumanFChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleEyesArgonian on Khajiit[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\EyesKhajiitFemaleChargen.tri - 50 | Actors\Character\Character Assets\EyesFemaleChargen.tri - 176).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleMouthOrc1 on Orc[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthOrcChargen.tri - 348 | Actors\Character\Character Assets\Mouth\MouthHumanChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleMouthOrc on Orc[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthOrcFemaleChargen.tri - 348 | Actors\Character\Character Assets\Mouth\MouthHumanFChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for MaleMouthOrc1 on Orc[0] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthOrcChargen.tri - 348 | Actors\Character\Character Assets\Mouth\MouthHumanChargen.tri - 141).
+[21:50:45.174] [33064] [E] RacePartDefaultGen::Accept - Could not bind default morphs for FemaleMouthOrc on Orc[1] using Nord. Vertex mismatch (Actors\Character\Character Assets\Mouth\MouthOrcFemaleChargen.tri - 348 | Actors\Character\Character Assets\Mouth\MouthHumanFChargen.tri - 141).
+[21:51:29.221] [8816 ] [I] Reverting...
+[21:51:32.549] [8816 ] [I] Loading...
+[21:51:32.560] [8816 ] [I] Loaded Morph: LDD_AES_ALTEyeShapeDEEYE - Value: 0.48999998
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_BrowArch - Value: 0.22999999
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_EyeSize - Value: -0.31
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_MouthUpDown - Value: -0.57
+[21:51:32.560] [8816 ] [I] Loaded Morph: ECE_NoseTipWidth - Value: -0.07
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyesUpDown - Value: 0.42999998
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseBackForward - Value: 0.08
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyeballUpDown - Value: -0.08
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_EyeAngle - Value: -1.75
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_MouthWidth - Value: -1.02
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_JawUpDown - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseHoleSlope - Value: 0.58
+[21:51:32.560] [8816 ] [I] Loaded Morph: RANs_LipDuckly - Value: 0.19
+[21:51:32.560] [8816 ] [I] Loaded Morph: ECE_ChinBackForward - Value: 0.34
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_MouthHeight - Value: -1.14
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_CheekShape - Value: 0.31
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_BrowAngle - Value: 0.03
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_ElfEar - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_CheeksWidth - Value: -0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseLength - Value: -0.64
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_CheeksBlow - Value: -0.51
+[21:51:32.560] [8816 ] [I] Loaded Morph: RANs_Weight - Value: 0.37
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseSellionWidth - Value: 0.049999997
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_ChinUpDown - Value: 0.12
+[21:51:32.560] [8816 ] [I] Loaded Morph: ECE_NoseBridgeWidth - Value: -0.45
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_MouthCornerBackForward - Value: 0.11
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_JawBackForward - Value: 0.11
+[21:51:32.560] [8816 ] [I] Loaded Morph: RANs_HeadShape - Value: 1
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_EyelidOpen - Value: 3
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyelashLength - Value: 0.37
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_UpperEyesHeight - Value: 1.42
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_LipThickness - Value: 0.12
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_AroundNoseBackForward - Value: -0.07
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_NoseWidth - Value: -0.29999998
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_UpperLipHeight - Value: 0.48999998
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_JawWidth - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseUpDown - Value: -0.04
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_LowerLipHeight - Value: -0.5
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseSellionBackForward - Value: -2.1699998
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_NoseTilt - Value: 1.0799999
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_NoseSellionUpDown - Value: 2.03
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_BrowBackForward - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyesSize - Value: 0.42999998
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyesSlope - Value: -0.14999999
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_LipType - Value: 28
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_NoseBridge - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_NoseSellionWidth - Value: -0.26999998
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyeballInOut - Value: -1.1
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyesInOut - Value: -0.56
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyesBackForward - Value: -2.74
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_LowerEyesHeight - Value: 0.049999997
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_UnderChinSlope - Value: 0.95
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_BrowInOut - Value: 0.16
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_JawShape - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_CheeksBoneInOut - Value: -0.08
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_MouthCornerUpDown - Value: 0.74
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_MouthSmile - Value: 0.22999999
+[21:51:32.560] [8816 ] [I] Loaded Morph: NSK_MouthWidth - Value: 0.04
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_Breton - Value: 0.01
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_MouthBackForward - Value: 0.089999996
+[21:51:32.560] [8816 ] [I] Loaded Morph: EXPR_LookDown - Value: 0.13
+[21:51:32.560] [8816 ] [I] Loaded Morph: ECE_EarShape - Value: 2
+[21:51:32.560] [8816 ] [I] Loaded Morph: ECE_EarSize - Value: 0.19
+[21:51:32.560] [8816 ] [I] Loaded Morph: CME_EyesHeight - Value: 0.25
+[21:51:32.561] [8816 ] [I] Loaded Morph: CME_ChinBackForward - Value: 0.03
+[21:51:32.561] [8816 ] [I] Loaded Morph: CME_ChinWidth - Value: -0.37
+[21:51:32.561] [8816 ] [I] Loaded Morph: SPG_TeethUpDown - Value: 0.08
+[21:52:13.724] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.725] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.725] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.726] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.726] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.726] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.727] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.727] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:13.727] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.011] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.011] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.012] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.012] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.012] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.013] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.013] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.013] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
+[21:52:35.013] [8816 ] [E] CompileShaderFromData - Failed to find REX::W32::D3DCompile function
